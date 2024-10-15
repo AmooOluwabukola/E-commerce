@@ -16,6 +16,7 @@ const Navbar = () => {
     <>
     <div ref={menuRef} className="bg-white top-0 w-full fixed border-b z-[20] font-roboto">
       <nav className="container lg:w-11/12 m-auto flex justify-between py-5 relative">  
+      <Link to='/'> <h1 className='text-3xl'>Harbikesfootwear</h1></Link>
 
         {/* NavLinks */}
         <ul
@@ -50,15 +51,17 @@ const Navbar = () => {
             className="md:text-4xl text-2xl cursor-pointer lg:hidden z-10"
           >
             {open ? (
-              <IoClose className="text-[#028A4C]" />
+              <IoClose className="" />
             ) : (
-              <SlMenu className="text-[#028A4C]" />
+              <SlMenu className="" />
             )}
           </div>
 
         
         </div>
-
+<div className="flex">
+  <h1 className='bg-red-600 w-[50px] h-[50px] rounded-full p-3'>AB</h1>
+</div>
       
       </nav>
  
