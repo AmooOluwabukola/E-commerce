@@ -1,73 +1,143 @@
-import React,{useState,useEffect, useRef} from 'react'
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { SlMenu } from "react-icons/sl";
-import { IoClose } from "react-icons/io5";
+import React, { useState } from 'react';
+import { FaHome, FaSearch, FaUserCircle, FaShoppingCart, FaBox, FaBell, FaMapMarkerAlt, FaHeadset, FaInfoCircle, FaSignOutAlt, FaBars } from 'react-icons/fa'; // Added new icons
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
-    const NavLinks = [
-        { name: "About", link: "/about" },
-        // { name: "Our Services", link: "/services" },
-        { name: "Product", link: "/product" },
-        { name: "Contact", link: "/contact" },
-      ];
-      const [open, setOpen] = useState(false); // Hamburger menu state
-      const location = useLocation();
-  const menuRef = useRef(null); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false); // For hamburger menu on mobile
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleHamburger = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
   return (
-    <>
-    <div ref={menuRef} className="bg-white top-0 w-full fixed border-b z-[20] font-roboto">
-      <nav className="container lg:w-11/12 m-auto flex justify-between py-5 relative">  
-      <Link to='/'> <h1 className='text-3xl'>Harbikesfootwear</h1></Link>
-
-        {/* NavLinks */}
-        <ul
-          className={`lg:flex md:items-center lg:pb-0 pb-12 absolute lg:static lg:z-auto w-full lg:w-auto lg:pl-0 px-9 transition-all duration-500 ease-in bg-white ${open ? "top-full opacity-100" : "hidden"
-            } lg:opacity-100`}
-        >
-          {NavLinks.map((link) => (
-            <li key={link.name} className="lg:ml-8 text-xl lg:my-0 my-4">
-              <Link
-                to={link.link}
-                onClick={() => setOpen(false)}
-                className={`font-spaceGrotesk xl:text-[18px] font-medium text-[15px] ${location.pathname === link.link
-                  ? "text-[#028A4C]"
-                  : "text-[#171717]"
-                  } hover:text-[#028A4C] focus:text-[#028A4C] duration-500`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-
-         
-        </ul>
-
-        <div className="flex mx-4 lg:mx-0 md:mx-8 gap-2">
-          {/* Mobile Hamburger Menu */}
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpen(!open);
-            }}
-            className="md:text-4xl text-2xl cursor-pointer lg:hidden z-10"
-          >
-            {open ? (
-              <IoClose className="" />
-            ) : (
-              <SlMenu className="" />
-            )}
-          </div>
-
+    <nav className="text-white shadow-md">
+      {/* Brand Name, Cart, and Hamburger Menu for both Mobile and Desktop */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+        {/* Brand Name */}
+        <Link to="/" className="text-white text-2xl font-bold">Harbikesfootwear</Link>
         
-        </div>
-<div className="flex">
-  <h1 className='bg-red-600 w-[50px] h-[50px] rounded-full p-3'>AB</h1>
-</div>
-      
-      </nav>
- 
-      
-    </div></>
-  )
-}
 
-export default Navbar
+        {/* Hamburger Menu for Mobile */}
+        <div className="lg:hidden flex items-center">
+          <FaBars className="text-2xl  cursor-pointer" onClick={toggleHamburger} />
+        </div>
+
+      
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex space-x-8 items-center">
+         
+          <Link to="/products" className=" hover:text-blue-500">Product</Link>
+          
+         
+          <Link to="/support" className=" hover:text-blue-500">Customer Support</Link> {/* Customer Support */}
+          <Link to="/about" className=" hover:text-blue-500">About</Link> {/* About */}
+          <div className="relative flex items-center">
+            <span className="text-gray-800 mr-2">John Doe</span>
+            <FaUserCircle
+              className="cursor-pointer text-2xl"
+              onClick={toggleDropdown}
+            />
+            {/* Dropdown */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 top-10 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-20">
+                <Link
+                  to="/notifications"
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                >
+                  <FaBell className="mr-3" /> Notifications
+                </Link>
+                <Link
+                  to="/addresses"
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                >
+                  <FaMapMarkerAlt className="mr-3" /> Addresses
+                </Link>
+                <Link
+                  to="/live-support"
+                  className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                >
+                  <FaHeadset className="mr-3" /> Live Support
+                </Link>
+                <Link
+                  to="/about"
+                  className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                >
+                  <FaInfoCircle className="mr-3" /> About
+                </Link>
+                <Link
+                  to="/logout"
+                  className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                >
+                  <FaSignOutAlt className="mr-3" /> Log Out
+                </Link>
+              </div>
+            )}
+          
+          </div>
+             {/* Cart Icon */}
+        <Link to="/order" className=" hover:text-blue-500 relative">
+          <FaShoppingCart className="text-2xl" />
+          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">3</span>
+        </Link>
+        </div>
+      </div>
+
+      {/* Hamburger Dropdown for Mobile */}
+      {isHamburgerOpen && (
+        <div className="lg:hidden bg-white shadow-lg py-4">
+          <div className="space-y-4">
+          
+            <Link to="/notifications" className="px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
+              <FaBell className="mr-3" /> Notifications
+            </Link>
+            <Link to="/addresses" className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
+              <FaMapMarkerAlt className="mr-3" /> Addresses
+            </Link>
+            <Link to="/live-support" className="px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
+              <FaHeadset className="mr-3" /> Live Support
+            </Link>
+            <Link to="/about" className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
+              <FaInfoCircle className="mr-3" /> About
+            </Link>
+            <Link to="/logout" className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
+              <FaSignOutAlt className="mr-3" /> Log Out
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {/* Bottom Navigation for Mobile  And tab*/}
+      <div className="lg:hidden fixed inset-x-0 bottom-0 bg-white shadow-md">
+        <div className="flex justify-around py-2">
+          
+          <Link to="/products" className="flex flex-col items-center">
+            <FaBox className="text-xl text-gray-800" />
+            <span className="text-sm text-gray-600">Product</span>
+          </Link>
+      
+        <Link to="/cart" className="text-gray-800 hover:text-blue-500 relative ">
+          <FaShoppingCart className="text-xl" />
+          <span className="text-sm text-gray-600">Cart</span>
+          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">3</span>
+        </Link>
+          <Link to="/search" className="flex flex-col items-center">
+            <FaSearch className="text-xl text-gray-800" />
+            <span className="text-sm text-gray-600">Search</span>
+          </Link>
+          <div onClick={toggleDropdown} className="flex flex-col items-center cursor-pointer">
+            <FaUserCircle className="text-xl text-gray-800" />
+            <span className="text-sm text-gray-600">Profile</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
