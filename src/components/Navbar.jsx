@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaHome, FaSearch, FaUserCircle, FaShoppingCart, FaBox, FaBell, FaMapMarkerAlt, FaHeadset, FaInfoCircle, FaSignOutAlt, FaBars } from 'react-icons/fa'; // Added new icons
 import { Link } from 'react-router-dom';
-
+import Heroimg from '../assets/hero.svg'
+import Hero from './Hero';
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false); // For hamburger menu on mobile
@@ -15,7 +16,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="text-white shadow-md">
+    <>
+    <div  className='relative h-[600px]' style={{ backgroundImage: `url(${Heroimg}) `, backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:"center", }}>
+
+    <nav className="text-white bg-gray-800 shadow-md mb-[5rem] fixed w-full"  >
       {/* Brand Name, Cart, and Hamburger Menu for both Mobile and Desktop */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         {/* Brand Name */}
@@ -38,7 +42,7 @@ const Navbar = () => {
           <Link to="/support" className=" hover:text-blue-500">Customer Support</Link> {/* Customer Support */}
           <Link to="/about" className=" hover:text-blue-500">About</Link> {/* About */}
           <div className="relative flex items-center">
-            <span className="text-gray-800 mr-2">John Doe</span>
+            <span className="mr-2">John Doe</span>
             <FaUserCircle
               className="cursor-pointer text-2xl"
               onClick={toggleDropdown}
@@ -48,13 +52,13 @@ const Navbar = () => {
               <div className="absolute right-0 top-10 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-20">
                 <Link
                   to="/notifications"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                  className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
                 >
                   <FaBell className="mr-3" /> Notifications
                 </Link>
                 <Link
                   to="/addresses"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
+                  className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
                 >
                   <FaMapMarkerAlt className="mr-3" /> Addresses
                 </Link>
@@ -113,7 +117,7 @@ const Navbar = () => {
       )}
 
       {/* Bottom Navigation for Mobile  And tab*/}
-      <div className="lg:hidden fixed inset-x-0 bottom-0 bg-white shadow-md">
+      <div className="lg:hidden fixed z-10 inset-x-0 bottom-0 bg-white shadow-md">
         <div className="flex justify-around py-2">
           
           <Link to="/products" className="flex flex-col items-center">
@@ -137,6 +141,13 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    <Hero/>
+    </div>
+     
+ 
+    
+    </>
+   
   );
 };
 

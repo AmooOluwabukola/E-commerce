@@ -1,15 +1,17 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Heroimg from '../assets/hero.svg'
+import Explore from '../components/Explore'
+
 const Home = () => {
   return (
     <>
-    <div>
-      <div className='h-[600px]'  style={{ backgroundImage: `url(${Heroimg}) ` }}>
-      <Navbar/>
+    <div className=''>
+    
+               <Navbar className="absolute top-0 left-0 w-full z-10" /> 
 
-      <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, sunt. Velit placeat explicabo molestiae quasi, aspernatur illo quos. Soluta, quo!</h1>
-      </div>
+     
+   <Explore/>
+  
     </div>
    
     </>
