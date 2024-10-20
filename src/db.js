@@ -15,12 +15,12 @@ import brown from './assets/brown-female.jpeg'
 
 
 const  homeproduct =[
-    { id: 1, image: shoe, title: "Full Leather shoe", price: "#50000", category: "Web Design" },
-    { id: 2, image: criss, title: "NFT website", price: "#50000", category: "Web Design" },
-    { id: 3, image: cross, title: "My Watch", price: "#50000", category: "App Design" },
-    { id: 4, image: brown, title: "Admin Dashboard", price: "#50000", category: "Web Design" },
-    { id: 5, image: birken, title: "Admin Dashboard", price: "#50000", category: "Web Design" },
-    { id: 6, image: mule, title: "Admin Dashboard", price: "#10000", category: "Web Design" },
+    { id: 1, image: shoe, title: "Full Leather shoe", price: "#50000", category: "Shoe" },
+    { id: 2, image: criss, title: " Brown Criss-Cross", price: "#20000", category: "Male" },
+    { id: 3, image: cross, title: "Black Criss-Cross", price: "#20000", category: "Palm" },
+    { id: 4, image: brown, title: "Slide for Her", price: "#20000", category: "Female" },
+    { id: 5, image: birken, title: "Birken Stock", price: "#50000", category: "Male" },
+    { id: 6, image: mule, title: "Open Toe Mule", price: "#10000", category: "Female" },
 ]
 
 // const productData = [
