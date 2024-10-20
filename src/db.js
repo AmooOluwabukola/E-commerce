@@ -7,20 +7,20 @@ import flipcross from './assets/flip-coss.jpeg'
 import fur from './assets/fur.jpeg'
 import her from './assets/her.jpeg'
 import louis from './assets/louis.jpeg'
-import mule from './assets/mule.jpeg'
+import mule from './assets/mule-female.jpeg'
 import shoe from './assets/shoe.jpeg'
 import white from './assets/white.jpeg'
-import brown from './assets/brown.jpeg'
+import brown from './assets/brown-female.jpeg'
 
 
 
 const  homeproduct =[
     { id: 1, image: shoe, title: "Full Leather shoe", price: "#50000", category: "Web Design" },
-    { id: 2, image: criss, title: "NFT website", position: "#50000", category: "Web Design" },
-    { id: 3, image: cross, title: "My Watch", position: "#50000", category: "App Design" },
-    { id: 4, image: brown, title: "Admin Dashboard", position: "#50000", category: "Web Design" },
-    { id: 5, image: birken, title: "Admin Dashboard", position: "#50000", category: "Web Design" },
-    { id: 6, image: mule, title: "Admin Dashboard", position: "#10000", category: "Web Design" },
+    { id: 2, image: criss, title: "NFT website", price: "#50000", category: "Web Design" },
+    { id: 3, image: cross, title: "My Watch", price: "#50000", category: "App Design" },
+    { id: 4, image: brown, title: "Admin Dashboard", price: "#50000", category: "Web Design" },
+    { id: 5, image: birken, title: "Admin Dashboard", price: "#50000", category: "Web Design" },
+    { id: 6, image: mule, title: "Admin Dashboard", price: "#10000", category: "Web Design" },
 ]
 
 // const productData = [
@@ -40,4 +40,4 @@ const  homeproduct =[
 //     { id: 14, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
 // ];
 
-export { productData,homeproduct };
+export { homeproduct };

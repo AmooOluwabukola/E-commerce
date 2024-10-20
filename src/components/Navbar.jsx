@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaHome, FaSearch, FaUserCircle, FaShoppingCart, FaBox, FaBell, FaMapMarkerAlt, FaHeadset, FaInfoCircle, FaSignOutAlt, FaBars } from 'react-icons/fa'; // Added new icons
 import { Link } from 'react-router-dom';
-import Heroimg from '../assets/hero.svg'
+import Heroimg from '../assets/shoe.jpeg'
 import Hero from './Hero';
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,13 +17,13 @@ const Navbar = () => {
 
   return (
     <>
-    <div  className='relative h-[600px]' style={{ backgroundImage: `url(${Heroimg}) `, backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:"center", }}>
+    <div >
 
-    <nav className="text-white bg-gray-800 shadow-md mb-[5rem] fixed w-full"  >
+    <nav className="text-black bg-white shadow-md mb-[5rem] fixed w-full"  >
       {/* Brand Name, Cart, and Hamburger Menu for both Mobile and Desktop */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         {/* Brand Name */}
-        <Link to="/" className="text-white text-2xl font-bold">Harbikesfootwear</Link>
+        <Link to="/" className=" text-2xl font-bold">Harbikesfootwear</Link>
         
 
         {/* Hamburger Menu for Mobile */}
@@ -117,7 +117,7 @@ const Navbar = () => {
       )}
 
       {/* Bottom Navigation for Mobile  And tab*/}
-      <div className="lg:hidden fixed z-10 inset-x-0 bottom-0 bg-white shadow-md">
+      <div className="lg:hidden fixed z-20 inset-x-0 bottom-0 bg-white shadow-md">
         <div className="flex justify-around py-2">
           
           <Link to="/products" className="flex flex-col items-center">
@@ -141,7 +141,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-    <Hero/>
+  
     </div>
      
  
