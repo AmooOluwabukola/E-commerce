@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Explore from '../components/Explore'
 import Heroimg from '../assets/shoe.jpeg'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 const Home = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Home = () => {
 </div>
      
    <Explore/>
+   <Footer/>
   
     </div>
    
