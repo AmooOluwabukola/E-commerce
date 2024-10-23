@@ -15,29 +15,23 @@ import brown from './assets/brown-female.jpeg'
 
 
 const  homeproduct =[
-    { id: 1, image: shoe, title: "Full Leather shoe", price: "#50000", category: "Shoe" },
-    { id: 2, image: criss, title: " Brown Criss-Cross", price: "#20000", category: "Male" },
-    { id: 3, image: cross, title: "Black Criss-Cross", price: "#20000", category: "Palm" },
-    { id: 4, image: brown, title: "Slide for Her", price: "#20000", category: "Female" },
-    { id: 5, image: birken, title: "Birken Stock", price: "#50000", category: "Slide" },
-    { id: 6, image: mule, title: "Open Toe Mule", price: "#10000", category: "Female" },
+    { id: 1, image: shoe, title: "Full Leather shoe", price: "50000", category: "Shoe" },
+    { id: 2, image: criss, title: " Brown Criss-Cross", price: "20000", category: "Male" },
+    { id: 3, image: cross, title: "Black Criss-Cross", price: "20000", category: "Palm" },
+    { id: 4, image: brown, title: "Slide for Her", price: "20000", category: "Female" },
+    { id: 5, image: birken, title: "Birken Stock", price: "50000", category: "Slide" },
+    { id: 6, image: mule, title: "Open Toe Mule", price: "10000", category: "Female" },
 ]
 
-// const productData = [
-//     { id: 1, image: image1, title: "Car rental website", price: "#50000", category: "Web Design" },
-//     { id: 2, image: image2, title: "NFT website", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 3, image: image3, title: "My Watch", position: "UI/UX Web design", category: "App Design" },
-//     { id: 4, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 5, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 6, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 7, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 8, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 9, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 10, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 11, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 12, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 13, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-//     { id: 14, image: image4, title: "Admin Dashboard", position: "UI/UX Web design", category: "Web Design" },
-// ];
+const  product =[
+    { id: 1, image: shoe, title: "Full Leather shoe", price: "50000", category: "Shoe" },
+    { id: 2, image: criss, title: " Brown Criss-Cross", price: "20000", category: "Male" },
+    { id: 3, image: cross, title: "Black Criss-Cross", price: "20000", category: "Palm" },
+    { id: 4, image: brown, title: "Slide for Her", price: "20000", category: "Female" },
+    { id: 5, image: birken, title: "Birken Stock", price: "50000", category: "Slide" },
+    { id: 6, image: mule, title: "Open Toe Mule", price: "10000", category: "Female" },
+]
 
-export { homeproduct };
+
+
+export { homeproduct,product };
