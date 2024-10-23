@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
     <div >
 
-    <nav className="text-black bg-white shadow-md mb-[5rem] fixed w-full"  >
+    <nav className="text-black bg-white shadow-md mb-[5rem] z-20 fixed w-full"  >
       {/* Brand Name, Cart, and Hamburger Menu for both Mobile and Desktop */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         {/* Brand Name */}
@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex space-x-8 items-center">
          
-          <Link to="/products" className=" hover:text-blue-500">Product</Link>
+          <Link to="/product" className=" hover:text-blue-500">Product</Link>
           
          
           <Link to="/support" className=" hover:text-blue-500">Customer Support</Link> {/* Customer Support */}
