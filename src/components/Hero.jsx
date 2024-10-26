@@ -10,7 +10,7 @@ const Hero = () => {
       <p className='text-center mb-4'>Discover the perfect blend of comfort and style with Harbikes Footwear. <br />
        From casual sneakers to elegant loafers, we've got something for every step you take.</p>
        <Link to='/product'>
-       <button className='bg-[#df0c12] p-2 lg:w-[10%] rounded-md mb-4'>Find Your Fit!</button>
+       <button className='bg-[#df0c12] p-2 w-100 rounded-3xl mb-4'>Find Your Fit!</button>
        </Link>
  
     </div>
