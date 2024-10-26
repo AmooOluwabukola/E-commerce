@@ -1,6 +1,7 @@
 import React from 'react';
 import { orderlist } from '../db'; 
 import { TbCurrencyNaira } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 const Order = () => {
   const orderItems = orderlist; 
   const handleCheckout = () => {
@@ -35,13 +36,15 @@ const Order = () => {
       <p className="text-[16px] font-bold text-start text-2xl p-2 flex">
                  Total: <TbCurrencyNaira className="text-2xl "/>{calculateTotal()}
                   </p>
-    
-      <button 
+    <Link to='/checkout'>
+    <button 
         className="mt-4 px-4 py-2 bg-[#df0c12] text-white font-semibold rounded-lg shadow hover:bg-[#df0c12]"
         onClick={handleCheckout}
       >
         Checkout
       </button>
+    </Link>
+     
     </div>
   );
 };
