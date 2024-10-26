@@ -33,5 +33,9 @@ const  product =[
 ]
 
 
-
-export { homeproduct,product };
+ const orderlist = [
+    { id: 1, name: 'Loafer Shoe', quantity: 2, price: 50000.00, image: shoe },
+    { id: 2, name: 'Birken Stock', quantity: 1, price: 20000.00, image: birken },
+    { id: 3, name: 'Mule', quantity: 3, price: 10000.00, image: mule },
+  ];
+export { homeproduct,orderlist,product };
