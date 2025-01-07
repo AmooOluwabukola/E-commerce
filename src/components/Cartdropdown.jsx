@@ -16,7 +16,7 @@ const Cartdropdown = () => {
   
     return (
         <>
-             <main className="absolute right-10 lg:top-10 mt-2 w-60 bg-white rounded-md shadow-lg py-2 z-20">
+             <main className="absolute right-0 lg:top-10 mt-2 w-60 bg-white rounded-md shadow-lg py-2 z-20">
                                     {/* <Link
                                       to="/notifications"
                                       className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
@@ -44,15 +44,15 @@ const Cartdropdown = () => {
                                      <div className="grid grid-cols-1 gap-4">
                                             {orderItems.map(item => (
                                               <div key={item.id} className="flex items-center border border-gray-300 rounded-lg p-4 shadow hover:shadow-md transition-shadow duration-200">
-                                                <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded mr-4" />
+                                                <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded mr-2" />
                                                 <div className="flex-grow">
                                                   <h2 className=" font-semibold">{item.name}</h2>
-                                                  <p>Quantity: {item.quantity}</p>
+                                                  <p className='text-sm'>Quantity: {item.quantity}</p>
                                                   <p className="text-[10px] font-bold text-start p-2 flex">
                                                      Price: <TbCurrencyNaira className="text-[12px] mt-[0.6px]"/>{item.price.toFixed(2)}
                                                       </p>
-                                                      <p className="text-[16px] font-bold text-start p-2 flex">
-                                                     Total: <TbCurrencyNaira className="text-2xl "/>{(item.price * item.quantity).toFixed(2)}
+                                                      <p className="text-[12px] font-bold text-start p-2 flex">
+                                                     Total: <TbCurrencyNaira className="text-[12px]"/>{(item.price * item.quantity).toFixed(2)}
                                                       </p>
                                               
                                                 </div>

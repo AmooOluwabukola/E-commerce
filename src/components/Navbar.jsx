@@ -35,7 +35,6 @@ const Navbar = () => {
         <div className="lg:hidden flex items-center gap-1">
           <FaBars className="text-2xl  cursor-pointer" onClick={toggleHamburger} />
         </div>
-        {/* Brand Name */}
            <div>
            <Link to="/" className="hidden lg:block text-2xl font-bold">Harbikesfootwear</Link> 
            <div className="flex lg:hidden justify-between gap-2">
@@ -62,10 +61,13 @@ const Navbar = () => {
           <div className="relative flex items-center " >
             <span className="mr-1">My Account</span>
             <FaChevronDown className="cursor-pointer mt-1 "  onClick={toggleDropdown}/>
+            {isDropdownOpen && (
+              <Accountdropdown/>
+            )}
           </div>
              {/* Cart Icon */}
-        <div  className=" hover:text-blue-500 relative">
-          <FaShoppingCart className="text-2xl"  onClick={toggleCart}/>
+        <div  className="cursor-pointer  relative" onClick={toggleCart}>
+          <FaShoppingCart className="text-2xl "  />
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">3</span>
           {isCartOpen && (
           <Cartdropdown/>

@@ -6,7 +6,7 @@ const Accountdropdown= () => {
 
     return(
         <>
-         <div className="absolute right-3 lg:top-10 mt-10 lg:mt-5 w-56 bg-white rounded-md shadow-lg py-2 z-20">
+         <div className="absolute right-3 lg:top-10 mt-10 lg:mt-1 w-56 bg-white rounded-md shadow-lg py-2 z-20">
                         <Link
                           to="/notifications"
                           className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
