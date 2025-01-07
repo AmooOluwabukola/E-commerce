@@ -7,7 +7,7 @@ import { LuSend } from "react-icons/lu";
 const Footer = () => {
   return (
     <>
-      <div className="bg-black text-white hidden lg:block">
+      <div className="bg-black text-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="grid grid-cols-1 lg:ml-5 xl:ml-0  sm:grid-cols-2 sm:gap-[1rem] lg:grid-cols-4 mt-2 gap-[20px] md:gap-[1rem] lg:gap-[3rem] xl:gap-[5rem] ">
             <div className="py-4 mb-11 ">

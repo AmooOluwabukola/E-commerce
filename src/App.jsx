@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Checkout from './pages/Checkout';
 import Order from './pages/Order';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Signup from './pages/auth/Signup';
 import UserProfile from './pages/UserProfile'
 import Resetpassword from './pages/Resetpassword'
 import Forgotpassword from './pages/Forgotpassword';

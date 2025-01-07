@@ -44,11 +44,11 @@ const Explore = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-11 ">
-      <form action="" className="w-[100%] flex gap-5 mb-5">
-        <div className="relative lg:w-[80%]">
+      <form action="" className="w-[100%] flex  mb-5 justify-between">
+        <div className="relative lg:w-[80%] w-[50%]">
           <input 
             type="text" 
-            placeholder="Search your preference" 
+            placeholder="Search product" 
             className=" pl-10 w-full rounded-3xl border shadow-lg  border-none " 
           />
           <div className="absolute top-3 left-2 pl-2">
@@ -56,17 +56,17 @@ const Explore = () => {
           </div>
         </div>
       
-        <div className="relative lg:w-[20%]">
+        <div className="relative lg:w-[20%] w-[42%]">
           <button 
             type="button" 
             className="w-full flex items-center justify-between border rounded-3xl shadow-lg px-3 py-2"
             onClick={() => setShowDropdown(!showDropdown)}
           >
             <div className="flex items-center">
-              <MdTune className="text-2xl mr-2" />
+              <MdTune className="lg:text-2xl mr-2" />
               {selectedFilter ? selectedFilter : 'Default'}
             </div>
-            <FaChevronDown />
+            <FaChevronDown className="lg:text-2xl"  />
           </button>
 
           {/* Dropdown for filter options */}

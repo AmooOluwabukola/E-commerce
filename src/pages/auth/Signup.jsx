@@ -4,6 +4,9 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 // import google from "../assets/google.svg";
 // import logo from "../assets/signuplogo.svg";
 // import { useAuth } from "../components/contexts/Auth";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 
 import toast from 'react-hot-toast';
@@ -100,10 +103,8 @@ const SignUp = () => {
     <>
 
       <main className="bg-white  w-full lg:flex font-spaceGrotesk items-center">
-        {/* Left section */}
+    
         <section className="md:w-1/2 p-4 py-8 lg:p-12 flex flex-col justify-center container mx-auto ">
-
-          
             <Link to="/" className="text-center text-7xl font-bold">
              <h1>HF</h1>
             </Link>
