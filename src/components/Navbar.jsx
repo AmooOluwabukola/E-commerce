@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { FaHome,FaChevronDown, FaSearch, FaUserCircle, FaShoppingCart, FaBox, FaBell, FaMapMarkerAlt, FaHeadset, FaInfoCircle, FaSignOutAlt, FaBars } from 'react-icons/fa'; // Added new icons
 import { Link } from 'react-router-dom';
+import { FiUser } from "react-icons/fi";
+import { IoCartOutline, IoSearchOutline  } from "react-icons/io5";
 import Accountdropdown from './Accountdropdown'
 import Cartdropdown from './Cartdropdown';
+import logo from '../assets/logo1.jpg'
+import logo2 from '../assets/logo2.jpg'
 // import Heroimg from '../shop/'
 import Hero from './Hero';
 const Navbar = () => {
@@ -27,7 +31,7 @@ const Navbar = () => {
     <>
     <div >
 
-    <nav className="text-black bg-white shadow-md mb-[5rem] z-20 fixed w-full"  >
+    <nav className="text-black bg-white shadow-md mb-[5rem] z-20 fixed w-full "  >
       {/* Brand Name, Cart, and Hamburger Menu for both Mobile and Desktop */}
       <Link to="/" className="lg:hidden text-2xl font-bold flex justify-center my-3">Harbikesfootwear</Link>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -38,13 +42,14 @@ const Navbar = () => {
            <div>
            <Link to="/" className="hidden lg:block text-2xl font-bold">Harbikesfootwear</Link> 
            <div className="flex lg:hidden justify-between gap-2">
-           <FaUserCircle className=" text-2xl text-gray-800"   onClick={toggleDropdown} />
+           < IoSearchOutline   className=" text-2xl text-gray-800" />
+           <FiUser className=" text-2xl text-gray-800"   onClick={toggleDropdown} />
  {/* Dropdown */}
  {isDropdownOpen && (
               <Accountdropdown/>
             )}
-              <div  className=" hover:text-blue-500 relative">
-          <FaShoppingCart className="text-2xl"  onClick={toggleCart}/>
+              <div  className="relative">
+          <IoCartOutline className="text-2xl"  onClick={toggleCart}/>
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">3</span>
           {isCartOpen && (
           <Cartdropdown/>
@@ -55,9 +60,9 @@ const Navbar = () => {
            </div>
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex space-x-8 items-center">
-          <Link to="/product" className=" hover:text-blue-500">Product</Link>
-          <Link to="/support" className=" hover:text-blue-500">Customer Support</Link> {/* Customer Support */}
-          <Link to="/about" className=" hover:text-blue-500">About</Link> {/* About */}
+          <Link to="/product" className=" hover:text-red-600">Product</Link>
+          <Link to="/support" className=" hover:text-red-600">Customer Support</Link> {/* Customer Support */}
+          <Link to="/about" className=" hover:text-red-600">About</Link> {/* About */}
           <div className="relative flex items-center " >
             <span className="mr-1">My Account</span>
             <FaChevronDown className="cursor-pointer mt-1 "  onClick={toggleDropdown}/>
@@ -65,14 +70,18 @@ const Navbar = () => {
               <Accountdropdown/>
             )}
           </div>
+          <div className="flex justify-between">
+          < IoSearchOutline   className=" text-2xl text-gray-800" />
              {/* Cart Icon */}
         <div  className="cursor-pointer  relative" onClick={toggleCart}>
-          <FaShoppingCart className="text-2xl "  />
+          <IoCartOutline className="text-2xl "  />
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full px-1">3</span>
           {isCartOpen && (
           <Cartdropdown/>
         )}
         </div>
+          </div>
+        
        
         </div>
       </div>
