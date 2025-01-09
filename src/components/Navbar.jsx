@@ -5,6 +5,8 @@ import { FiUser } from "react-icons/fi";
 import { IoCartOutline, IoSearchOutline  } from "react-icons/io5";
 import Accountdropdown from './Accountdropdown'
 import Cartdropdown from './Cartdropdown';
+import { AiOutlineProduct } from "react-icons/ai";
+import { FcAbout } from "react-icons/fc";
 import logo from '../assets/logo1.jpg'
 import logo2 from '../assets/logo2.jpg'
 // import Heroimg from '../shop/'
@@ -92,13 +94,13 @@ const Navbar = () => {
           <div className="space-y-4">
           
             <Link to="/notifications" className="px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
-              <FaBell className="mr-3" /> Product
+              <AiOutlineProduct className="mr-3" /> Product
             </Link>
             <Link to="/live-support" className="px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
               <FaHeadset className="mr-3" /> Customer Support
             </Link>
             <Link to="/about" className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center">
-              <FaInfoCircle className="mr-3" /> About
+              <FcAbout className="mr-3 text-black" /> About
             </Link>
            
           </div>
