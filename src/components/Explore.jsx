@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { homeproduct } from "../db"; // assuming this contains filter options
 import { MdTune } from 'react-icons/md';
 import { FaChevronDown, FaSearch } from 'react-icons/fa';
@@ -6,9 +6,9 @@ import { MdAdd } from 'react-icons/md';
 import { Link } from "react-router-dom";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { FaRegStar } from "react-icons/fa";
-
+import { CartContext } from "./shop/CartContext";
 const Explore = () => {
-
+  const { addToCart } = useContext(CartContext); // Access addToCart function from CartContext
   const [selectedFilter, setSelectedFilter] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
     // cartmodal
@@ -18,7 +18,7 @@ const Explore = () => {
   const [color, setColor] = useState("");
 
   // filter options array
-  const filterOptions = ['Default','Category 1', 'Category 2', 'Category 3', ];
+  const filterOptions = ['Default','Men', 'Women', 'Children', ];
 
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter);
@@ -44,11 +44,11 @@ const Explore = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-11 ">
-      <form action="" className="w-[100%] flex  mb-5 justify-between">
-        <div className="relative lg:w-[80%] w-[50%]">
+      <form action="" className="w-[100%] flex  mb-5 justify-between gap-3">
+        <div className="relative lg:w-[80%] md:[60%] w-[50%]">
           <input 
             type="text" 
-            placeholder="Search product" 
+            placeholder="Search..." 
             className=" pl-10 w-full rounded-3xl border shadow-lg  border-none " 
           />
           <div className="absolute top-3 left-2 pl-2">
@@ -56,7 +56,7 @@ const Explore = () => {
           </div>
         </div>
       
-        <div className="relative lg:w-[20%] w-[42%]">
+        <div className="relative lg:w-[20%] w-[42%] md:w-[35%]">
           <button 
             type="button" 
             className="w-full flex items-center justify-between border rounded-3xl shadow-lg px-3 py-2"

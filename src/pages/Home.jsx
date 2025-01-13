@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
     <div className=''>
-    <div  className=' ' style={{ backgroundImage: `url(${Heroimg}) `, backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:"center" }}>
+    <div  className=' bg-white'>
     
                <Navbar className="absolute top-0 left-0 w-full " /> 
                  <Hero/>

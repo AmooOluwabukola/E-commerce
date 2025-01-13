@@ -49,44 +49,47 @@ const Product = () => {
           <h1 className='lg:text-3xl text-[2rem] mt-[5rem] '>
             Products
           </h1>
-          <form action="" className="w-[100%] flex gap-5 mb-5">
-            <div className="relative lg:w-[80%]">
-              <input
-                type="text"
-                placeholder="Search your preference"
-                className="pl-10 w-full rounded-3xl border shadow-lg border-none"
-              />
-              <div className="absolute top-3 left-2 pl-2">
-                <FaSearch />
-              </div>
-            </div>
-            <div className="relative lg:w-[20%]">
-              <button
-                type="button"
-                className="w-full flex items-center justify-between border rounded-3xl shadow-lg px-3 py-2"
-                onClick={() => setShowDropdown(!showDropdown)}
-              >
-                <div className="flex items-center">
-                  <MdTune className="text-2xl mr-2" />
-                  {selectedFilter ? selectedFilter : 'Default'}
+           <form action="" className="w-[100%] flex  mb-5 justify-between gap-3">
+                <div className="relative lg:w-[80%] md:[60%] w-[50%]">
+                  <input 
+                    type="text" 
+                    placeholder="Search..." 
+                    className=" pl-10 w-full rounded-3xl border shadow-lg  border-none " 
+                  />
+                  <div className="absolute top-3 left-2 pl-2">
+                    <FaSearch />
+                  </div>
                 </div>
-                <FaChevronDown />
-              </button>
-              {showDropdown && (
-                <ul className="absolute w-full bg-white border rounded-lg mt-1 shadow-lg">
-                  {filterOptions.map((filter, index) => (
-                    <li
-                      key={index}
-                      className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => handleFilterSelect(filter)}
-                    >
-                      {filter}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </form>
+              
+                <div className="relative lg:w-[20%] w-[42%] md:w-[35%]">
+                  <button 
+                    type="button" 
+                    className="w-full flex items-center justify-between border rounded-3xl shadow-lg px-3 py-2"
+                    onClick={() => setShowDropdown(!showDropdown)}
+                  >
+                    <div className="flex items-center">
+                      <MdTune className="lg:text-2xl mr-2" />
+                      {selectedFilter ? selectedFilter : 'Default'}
+                    </div>
+                    <FaChevronDown className="lg:text-2xl"  />
+                  </button>
+        
+                  {/* Dropdown for filter options */}
+                  {showDropdown && (
+                    <ul className="absolute  w-full bg-white border rounded-lg mt-1 shadow-lg">
+                      {filterOptions.map((filter, index) => (
+                        <li 
+                          key={index} 
+                          className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                          onClick={() => handleFilterSelect(filter)}
+                        >
+                          {filter}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </form>
           <section className="grid grid-cols-1 sm:grid-cols-2 sm:gap-[1rem] lg:grid-cols-3 mt-2 gap-[20px] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[3rem] mb-10">
             {product.map((products) => {
               const { id, image, title, price } = products;

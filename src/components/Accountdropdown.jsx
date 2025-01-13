@@ -9,13 +9,13 @@ const Accountdropdown= () => {
         <>
          <div className="absolute right-0 lg:top-10 mt-10 lg:mt-1 w-56 bg-white shadow-lg py-2 z-20">
                         <Link
-                          to="/notifications"
+                          to="/signup"
                           className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
                         >
                          Register
                         </Link>
                         <Link
-                          to="/addresses"
+                          to="/login"
                           className=" px-4 py-2 text-gray-800 hover:bg-gray-200 flex items-center"
                         >
                        Login
